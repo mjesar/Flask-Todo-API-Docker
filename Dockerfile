@@ -1,4 +1,4 @@
-FROM MohammadAli/flask-Todoapi-Postgres:1
+FROM mjesar/flask-todoapi-postgres:1
 
 
 ADD ./app /home/app/

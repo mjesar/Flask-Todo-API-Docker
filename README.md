@@ -3,7 +3,7 @@ This project focus on building REST-Api with flask-Python
 use sqlite database with PostgressSQL and flask library SQLAchamy
 and Containerzed with Docker and beployed to heroku  
 
-1:app.py file run all routes imported from file and register their Blueprint
+Step #1 app.py file run all routes imported from file and register their Blueprint
 
 sample code
 ```python
@@ -26,7 +26,7 @@ if __name__ == '__main__':
 
 ```
 
-2:databaseModel.py file consist a sql databse table model 
+ Step #2:databaseModel.py file consist a sql databse table model 
 ```python
 from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
@@ -37,7 +37,7 @@ class Todo(db.Model):
     description=db.Column(db.String(90))
     complete = db.Column(db.Boolean)
 ```
-3:Routes directory have 6 routes with different functions of which perform CRUD opertaions 
+Step #3:Routes directory have 6 routes with different functions of which perform CRUD opertaions 
 
 
 #Flask Api with postgress sql
@@ -85,3 +85,17 @@ def get_all():
 
     return jsonify({'title' : output})
 ```
+Step #4: Containerizing app 
+    it uses docker-compose to run multiple container togather 
+    this app need multiple conatiner one of flask app itself
+    2nd which is running postgres container then connect both of them together 
+    Flask app runs on 0.0.0.0:5000 port 
+    Prosgress app runs on 0.0.0.0:5432
+    
+   also containe base-image dir whiich consist another dockerfile 
+    that will help to install all requirements only once 
+    other wise it will run main dockerfile when ever docker compose file is up
+    to run this conatiner 
+    ```docker-compose up -d```
+    to stop
+    ```dockcer-compose stop```

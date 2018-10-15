@@ -1,6 +1,7 @@
-# Flask Api with Postgress Sql 
+# Flask Api with Postgress Sql Containerzed with Docker  
 This project focus on building REST-Api with flask-Python 
 use sqlite database with PostgressSQL and flask library SQLAchamy
+and Containerzed with Docker and beployed to heroku  
 
 1:app.py file run all routes imported from file and register their Blueprint
 

@@ -1,4 +1,4 @@
-FROM fanoftal2/flask-crud-base:1
+FROM MohammadAli/flask-Todoapi-Postgres:1
 
 
 ADD ./app /home/app/
